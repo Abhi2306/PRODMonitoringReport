@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="prod_monitoring_report" duration-ms="43355" started-at="2020-01-20T13:44:02Z" finished-at="2020-01-20T13:44:45Z">
+    <groups>
+    </groups>
+    <test name="processing_metrics_test" duration-ms="43286" started-at="2020-01-20T13:44:02Z" finished-at="2020-01-20T13:44:45Z">
+      <class name="com.prod_validation.app.ReportGeneration">
+        <test-method status="PASS" signature="prodMonitoringSupport(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.prod_validation.app.ReportGeneration@7d0587f1]" name="prodMonitoringSupport" duration-ms="42964" started-at="2020-01-20T19:14:02Z" finished-at="2020-01-20T19:14:45Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[pm]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[2018]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[01]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- prodMonitoringSupport -->
+        <test-method status="PASS" signature="publishReport()[pri:0, instance:com.prod_validation.app.ReportGeneration@7d0587f1]" name="publishReport" is-config="true" duration-ms="300" started-at="2020-01-20T19:14:45Z" finished-at="2020-01-20T19:14:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- publishReport -->
+      </class> <!-- com.prod_validation.app.ReportGeneration -->
+    </test> <!-- processing_metrics_test -->
+    <test name="blast_logic_test" duration-ms="53" started-at="2020-01-20T13:44:45Z" finished-at="2020-01-20T13:44:45Z">
+      <class name="com.prod_validation.app.ReportGeneration">
+        <test-method status="PASS" signature="initialSetUp()[pri:0, instance:com.prod_validation.app.ReportGeneration@5f282abb]" name="initialSetUp" is-config="true" duration-ms="5908" started-at="2020-01-20T19:13:56Z" finished-at="2020-01-20T19:14:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialSetUp -->
+        <test-method status="PASS" signature="prodMonitoringSupport(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.prod_validation.app.ReportGeneration@5f282abb]" name="prodMonitoringSupport" duration-ms="0" started-at="2020-01-20T19:14:45Z" finished-at="2020-01-20T19:14:45Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[bl]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[2018]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[01]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- prodMonitoringSupport -->
+        <test-method status="PASS" signature="publishReport()[pri:0, instance:com.prod_validation.app.ReportGeneration@5f282abb]" name="publishReport" is-config="true" duration-ms="37" started-at="2020-01-20T19:14:45Z" finished-at="2020-01-20T19:14:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- publishReport -->
+      </class> <!-- com.prod_validation.app.ReportGeneration -->
+    </test> <!-- blast_logic_test -->
+  </suite> <!-- prod_monitoring_report -->
+</testng-results>

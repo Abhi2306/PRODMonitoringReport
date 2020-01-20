@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [prod_monitoring_report]">
+  <parameter name="month" value="01"/>
+  <parameter name="source_system" value="bl"/>
+  <parameter name="year" value="2018"/>
+  <test name="processing_metrics_test(failed)">
+    <parameter name="month" value="01"/>
+    <parameter name="source_system" value="pm"/>
+    <parameter name="year" value="2018"/>
+    <classes>
+      <class name="com.prod_validation.app.ReportGeneration">
+        <methods>
+          <include name="prodMonitoringSupport"/>
+          <include name="initialSetUp"/>
+        </methods>
+      </class> <!-- com.prod_validation.app.ReportGeneration -->
+    </classes>
+  </test> <!-- processing_metrics_test(failed) -->
+  <test name="blast_logic_test(failed)">
+    <parameter name="month" value="01"/>
+    <parameter name="source_system" value="bl"/>
+    <parameter name="year" value="2018"/>
+    <classes>
+      <class name="com.prod_validation.app.ReportGeneration">
+        <methods>
+          <include name="prodMonitoringSupport"/>
+          <include name="initialSetUp"/>
+        </methods>
+      </class> <!-- com.prod_validation.app.ReportGeneration -->
+    </classes>
+  </test> <!-- blast_logic_test(failed) -->
+</suite> <!-- Failed suite [prod_monitoring_report] -->
