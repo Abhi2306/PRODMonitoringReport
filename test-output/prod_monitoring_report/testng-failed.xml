@@ -4,9 +4,9 @@
   <parameter name="month" value="01"/>
   <parameter name="source_system" value="bl"/>
   <parameter name="year" value="2018"/>
-  <test name="processing_metrics_test(failed)">
+  <test name="safety_indicator_logic_test(failed)">
     <parameter name="month" value="01"/>
-    <parameter name="source_system" value="pm"/>
+    <parameter name="source_system" value="si"/>
     <parameter name="year" value="2018"/>
     <classes>
       <class name="com.prod_validation.app.ReportGeneration">
@@ -16,7 +16,7 @@
         </methods>
       </class> <!-- com.prod_validation.app.ReportGeneration -->
     </classes>
-  </test> <!-- processing_metrics_test(failed) -->
+  </test> <!-- safety_indicator_logic_test(failed) -->
   <test name="blast_logic_test(failed)">
     <parameter name="month" value="01"/>
     <parameter name="source_system" value="bl"/>

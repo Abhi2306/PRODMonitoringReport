@@ -31,6 +31,8 @@ public class ReportGeneration extends Base {
 
 		String[] table_names_lst = null;
 		
+		Base.source_system = source_system;
+		
 		//Select site & table names as per business unit
 		if(source_system.equals("fms")) {
 			
@@ -53,11 +55,20 @@ public class ReportGeneration extends Base {
 		}else if(source_system.equals("bl")) {
 			
 			parent_logger = extent.createTest("Blast Logic Missing Report");
+			parent_logger.assignCategory("Blast Logic");
 			/*table_names_lst = table_names_pm;
 			site_names_lst = ReadQueryData.readSiteNames("pm_site_names");
 			
-			
 			Common_Function.generateRecordForPublishingReport(table_names_lst);*/
+			
+		}else if(source_system.equals("si")) {
+			
+			table_names_lst = table_names_si;
+			site_names_lst = ReadQueryData.readSiteNames("si_site_names");
+			parent_logger = extent.createTest("Safety Indicator Missing Report");
+			parent_logger.assignCategory("Safety Indicator");
+			
+			Common_Function.generateRecordForPublishingReport(table_names_lst, year_xml, month_xml);
 		}
 				
 		if(!(site_names_lst.isEmpty())) {

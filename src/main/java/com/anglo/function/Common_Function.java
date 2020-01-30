@@ -26,12 +26,41 @@ public class Common_Function extends Base {
 				if(!(site_names_lst.get(i).toUpperCase().equals("VENETIA") &&
 						table_names_lst[j].toLowerCase().equals("fact_shovel_buckets"))) {
 					
-					//System.out.println(site_names_lst.get(i)+" "+table_names_lst.get(j));
+					if(source_system.equals("si")) {
+						
+						table_name = "edm."+table_names_lst[j];
+					}else {
+						
+						table_name = "dwh."+table_names_lst[j];
+					}
 					
-					table_name = "dwh."+table_names_lst[j];
-
 					//this will return set of records data
-					DBManager.readDataQuery(site_names_lst.get(i), table_name, node);
+					if(((site_names_lst.get(i).toUpperCase().equals("KHWEZELA"))
+							|| (site_names_lst.get(i).toUpperCase().equals("ISIBONELO"))) 
+							&& (table_name.toLowerCase().contains("daily_production_coal"))) {
+						
+						DBManager.readDataQuery(site_names_lst.get(i), table_name, node);
+						
+					}else if(((site_names_lst.get(i).toUpperCase().equals("KOLOMELA"))
+							|| (site_names_lst.get(i).toUpperCase().equals("SISHEN"))) 
+							&& (table_name.toLowerCase().contains("daily_production_kumba"))){
+
+						DBManager.readDataQuery(site_names_lst.get(i), table_name, node);
+						
+					}else if(((site_names_lst.get(i).toUpperCase().equals("DISHABA"))
+							|| (site_names_lst.get(i).toUpperCase().equals("MOGALAKWENA"))
+							|| (site_names_lst.get(i).toUpperCase().equals("TUMELA"))) 
+							&& (table_name.toLowerCase().contains("edm.daily_production_platinum"))){
+
+						DBManager.readDataQuery(site_names_lst.get(i), table_name, node);
+						
+					}else {
+						
+						if(!(source_system.equals("si"))) {
+							
+							DBManager.readDataQuery(site_names_lst.get(i), table_name, node);
+						}
+					}	
 				}
 			}
 			

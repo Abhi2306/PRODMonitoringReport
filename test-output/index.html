@@ -53,7 +53,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-prod_monitoring_report">
-                    <span class="test-stats">2 tests</span>
+                    <span class="test-stats">4 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -90,7 +90,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -101,7 +101,17 @@
                     <div class="method-list-content passed suite-prod_monitoring_report">
                       <span>
                         <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-prod_monitoring_report" title="com.prod_validation.app.ReportGeneration" hash-for-method="prodMonitoringSupport(fms, 2018, 01)">prodMonitoringSupport(fms, 2018, 01)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-prod_monitoring_report" title="com.prod_validation.app.ReportGeneration" hash-for-method="prodMonitoringSupport(pm, 2018, 01)">prodMonitoringSupport(pm, 2018, 01)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-prod_monitoring_report" title="com.prod_validation.app.ReportGeneration" hash-for-method="prodMonitoringSupport(si, 2018, 01)">prodMonitoringSupport(si, 2018, 01)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -129,10 +139,26 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+                  <a name="prodMonitoringSupport(fms, 2018, 01)">
+                  </a> <!-- prodMonitoringSupport(fms, 2018, 01) -->
+                  <span class="method-name">prodMonitoringSupport</span>
+                  <span class="parameters">(fms, 2018, 01)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="prodMonitoringSupport(pm, 2018, 01)">
                   </a> <!-- prodMonitoringSupport(pm, 2018, 01) -->
                   <span class="method-name">prodMonitoringSupport</span>
                   <span class="parameters">(pm, 2018, 01)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="prodMonitoringSupport(si, 2018, 01)">
+                  </a> <!-- prodMonitoringSupport(si, 2018, 01) -->
+                  <span class="method-name">prodMonitoringSupport</span>
+                  <span class="parameters">(si, 2018, 01)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -155,6 +181,14 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;prod_monitoring_report&quot;&gt;
+  &lt;test name=&quot;fms_testcase&quot;&gt;
+    &lt;parameter name=&quot;month&quot; value=&quot;01&quot;/&gt;
+    &lt;parameter name=&quot;source_system&quot; value=&quot;fms&quot;/&gt;
+    &lt;parameter name=&quot;year&quot; value=&quot;2018&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.prod_validation.app.ReportGeneration&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- fms_testcase --&gt;
   &lt;test name=&quot;processing_metrics_test&quot;&gt;
     &lt;parameter name=&quot;month&quot; value=&quot;01&quot;/&gt;
     &lt;parameter name=&quot;source_system&quot; value=&quot;pm&quot;/&gt;
@@ -163,6 +197,14 @@
       &lt;class name=&quot;com.prod_validation.app.ReportGeneration&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- processing_metrics_test --&gt;
+  &lt;test name=&quot;safety_indicator_logic_test&quot;&gt;
+    &lt;parameter name=&quot;month&quot; value=&quot;01&quot;/&gt;
+    &lt;parameter name=&quot;source_system&quot; value=&quot;si&quot;/&gt;
+    &lt;parameter name=&quot;year&quot; value=&quot;2018&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.prod_validation.app.ReportGeneration&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- safety_indicator_logic_test --&gt;
   &lt;test name=&quot;blast_logic_test&quot;&gt;
     &lt;parameter name=&quot;month&quot; value=&quot;01&quot;/&gt;
     &lt;parameter name=&quot;source_system&quot; value=&quot;bl&quot;/&gt;
@@ -182,7 +224,13 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
+                <span class="test-name">fms_testcase (1 class)</span>
+              </li>
+              <li>
                 <span class="test-name">processing_metrics_test (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">safety_indicator_logic_test (1 class)</span>
               </li>
               <li>
                 <span class="test-name">blast_logic_test (1 class)</span>
@@ -211,20 +259,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'prodMonitoringSupport')
 data.setCell(0, 2, 'com.prod_validation.app.ReportGeneration')
-data.setCell(0, 3, 42964);
+data.setCell(0, 3, 608691);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'prodMonitoringSupport')
 data.setCell(1, 2, 'com.prod_validation.app.ReportGeneration')
-data.setCell(1, 3, 0);
+data.setCell(1, 3, 18212);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'prodMonitoringSupport')
+data.setCell(2, 2, 'com.prod_validation.app.ReportGeneration')
+data.setCell(2, 3, 12970);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'prodMonitoringSupport')
+data.setCell(3, 2, 'com.prod_validation.app.ReportGeneration')
+data.setCell(3, 3, 4);
 window.suiteTableData['prod_monitoring_report']= { tableData: data, tableDiv: 'times-div-prod_monitoring_report'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 42 seconds</span>
+              <span class="suite-total-time">Total running time: 10 minutes</span>
               <div id="times-div-prod_monitoring_report">
               </div> <!-- times-div-prod_monitoring_report -->
             </div> <!-- times-div -->
@@ -256,20 +312,36 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="test-method">
-                <span class="method-name">prodMonitoringSupport(pm, 2018, 01)</span>
-                <span class="method-start">5914 ms</span>
+                <span class="method-name">prodMonitoringSupport(fms, 2018, 01)</span>
+                <span class="method-start">1678 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">publishReport</span>
-                <span class="method-start">48894 ms</span>
+                <span class="method-start">610380 ms</span>
+              </div> <!-- configuration-test after -->
+              <div class="test-method">
+                <span class="method-name">prodMonitoringSupport(pm, 2018, 01)</span>
+                <span class="method-start">610934 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-test after">
+                <span class="method-name">publishReport</span>
+                <span class="method-start">623915 ms</span>
+              </div> <!-- configuration-test after -->
+              <div class="test-method">
+                <span class="method-name">prodMonitoringSupport(si, 2018, 01)</span>
+                <span class="method-start">624073 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-test after">
+                <span class="method-name">publishReport</span>
+                <span class="method-start">642290 ms</span>
               </div> <!-- configuration-test after -->
               <div class="test-method">
                 <span class="method-name">prodMonitoringSupport(bl, 2018, 01)</span>
-                <span class="method-start">49210 ms</span>
+                <span class="method-start">642405 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">publishReport</span>
-                <span class="method-start">49226 ms</span>
+                <span class="method-start">642410 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

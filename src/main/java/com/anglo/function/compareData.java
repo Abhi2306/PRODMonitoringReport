@@ -83,6 +83,9 @@ public class compareData extends Base {
 						System.out.print(year + "::" + Month.of(month_int).name() + ":");
 						System.out.println(ld.getDayOfMonth() == rec.getValue());
 						
+						//System.out.println("rec.getValue() : "+(rec.getValue()));
+						//System.out.println("ld.getDayOfMonth()-1 : "+(ld.getDayOfMonth()-1));
+						
 						//Checking with minus 1 day date
 						if ((ld.getDayOfMonth()-1) != rec.getValue()) {
 

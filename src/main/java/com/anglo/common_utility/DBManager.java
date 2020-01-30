@@ -32,15 +32,31 @@ public class DBManager extends Base {
 
 	public static void readDataQuery(String site_name, String table_name, ExtentTest logger) throws SQLException, FileNotFoundException {
 
+		String query = null;
+		String replaced_query = null;
+		String replaced_query_1 = null;
 		Statement stmt1 = con.createStatement();
 
 		tablename = table_name;
 
-		String query = FileReader.fileReader("record_fetching_query");
-
-		String replaced_query = query.replaceAll("Site_Name_Variable", site_name);
-		
-		String replaced_query_1 = replaced_query.replaceAll("Table_Name_Variable", table_name);
+		if(source_system.equals("si")) {
+			
+			query = FileReader.fileReader("si_record_fetching_query");
+			
+			if(tablename.contains("production_coal")) {
+				
+				query = query.replace("column_name", "data_date");
+			}else {
+				
+				query = query.replace("column_name", "production_date");
+			}
+		}else {
+			
+			query = FileReader.fileReader("record_fetching_query");
+		}
+	
+		replaced_query = query.replaceAll("Site_Name_Variable", site_name);
+		replaced_query_1 = replaced_query.replaceAll("Table_Name_Variable", table_name);
 
 		System.out.println("=====Data For " + table_name + " table=====");
 		System.out.println(replaced_query_1);
@@ -63,18 +79,4 @@ public class DBManager extends Base {
 		
 		return rs2;
 	} 
-	
-/*	//Method specifically for reading table names from DB
-	public static ResultSet readTableQuery_resultSet() throws SQLException, FileNotFoundException {
-		
-		Statement stmt2 = con.createStatement();
-		
-		//String query_tableName = FileReader.readTableNames_Query();
-		String query_tableName = FileReader.fileReader("table_names");
-		//System.out.println(query_tableName);
-		
-		ResultSet rs1 = stmt2.executeQuery(query_tableName);
-		
-		return rs1;
-	}*/
 }

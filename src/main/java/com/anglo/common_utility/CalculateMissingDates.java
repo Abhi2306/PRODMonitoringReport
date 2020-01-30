@@ -33,7 +33,8 @@ public class CalculateMissingDates {
 	    String[] startEndDates = firstLastDate.split("/");
 	    String startDate = startEndDates[0];
 	    String endDate = startEndDates[1];
-	    System.out.println(date_list.size());
+	    //System.out.println(date_list.size());
+	    
 	    if(!startDate.equals(date_list.get(0))) {
 	    	System.out.println("=>"+startDate+"--"+date_list.get(0));
 	    	date_list.add(0, startDate);
@@ -41,11 +42,19 @@ public class CalculateMissingDates {
 	    }
 	    if(!endDate.equals(date_list.get(date_list.size()-1))) {
 	    	System.out.println("==>>"+endDate+"--"+date_list.get(date_list.size()-1));
-	    	date_list.add(endDate);
-	    	count_end_date++;
+	    	
+	    	if(!(date_list.contains(endDate))) {
+	    		
+	    		date_list.add(endDate);
+	    		count_end_date++;
+	    	}
 	    }
 	    
-	    for(int i=0;i<date_list.size()-1;i++) {
+	    //System.out.println("Array after adding dates : "+date_list);
+	    //System.out.println("index of last : "+(date_list.indexOf(endDate)-1));
+	    
+	    //Changed this i<date_list.size()-1
+	    for(int i=0;i<date_list.indexOf(endDate);i++) {
 	    	
 	    	Calendar calendar_1 = Calendar.getInstance();
 	    	Calendar calendar_2 = Calendar.getInstance();
