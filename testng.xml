@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="prod_monitoring_report">
-	<!--<test name="fms_testcase">
+	<test name="fms_testcase">
 		<parameter name="source_system" value="fms"></parameter>
 		<parameter name="year" value="2018"></parameter>
 		<parameter name="month" value="01"></parameter>
 		<classes>
 			<class name="com.prod_validation.app.ReportGeneration"></class>
 		</classes>
-	</test> -->
+	</test>
 
 	<test name="processing_metrics_test">
 		<parameter name="source_system" value="pm"></parameter>
